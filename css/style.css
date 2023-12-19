@@ -62,6 +62,13 @@
     right: 15px;
 }
 
+.my-card{
+    display: none;
+}
+
+.active{
+    display: block;
+}
 
 /* 
     header 

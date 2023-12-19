@@ -2,122 +2,61 @@
 const myContainer = document.querySelector('.img-container');
 const myThumbnail = document.querySelector('.thumbnail');
 
-// Array contentene immagini carosello 
-const myImages = [
-    `<img id="img-1" class="w-100 h-100 obj-cover mx-3" src="img/01.webp" alt="Immagine 1">`,
-    `<img id="img-2" class="w-100 h-100 obj-cover mx-3" src="img/02.webp" alt="Immagine 2">`,
-    `<img id="img-3" class="w-100 h-100 obj-cover mx-3" src="img/03.webp" alt="Immagine 3">`,
-    `<img id="img-4" class="w-100 h-100 obj-cover mx-3" src="img/04.webp" alt="Immagine 4">`,
-    `<img id="img-5" class="w-100 h-100 obj-cover mx-3" src="img/05.webp" alt="Immagine 5">`
-]
-
-console.log(myImages, typeof myImages);
-
-// Stampa dell'array
-myContainer.innerHTML = myImages[0];
-
 //Dichiarazioni bottoni 
 const lefttButton = document.getElementById('left-button');
 const rightButton = document.getElementById('right-button');
 const stopButton = document.getElementById('stop-button');
 
-// Dichiarazione costani elementi html immagini thumbnail
-const myImg1 = document.createElement('img');
-myImg1.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
-myImg1.src = 'img/01.webp';
+// NUOVO ARRAY OGGETTI
+const images = [
+    {
+        url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
+        title: 'Svezia',
+        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
+    },
 
-const myImg2 = document.createElement('img');
-myImg2.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
-myImg2.src = 'img/02.webp';
+    // {
+    //     url: 'https://static1.evcdn.net/images/reduction/1513757_w-1920_h-1080_q-70_m-crop.jpg',
+    //     title: 'Perù',
+    //     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
+    // },
 
-const myImg3 = document.createElement('img');
-myImg3.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
-myImg3.src = 'img/03.webp';
+    // {
+    //     url: 'https://img.itinari.com/pages/images/original/0d3ed180-d22d-48e8-84df-19c4d888b41f-62-crop.jpg?ch=DPR&dpr=2.625&w=1600&s=7ebd4b5a9e045f41b4e0c7c75d298d6c',
+    //     title: 'Chile',
+    //     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
+    // },
+    // {
+    //     url: 'https://static1.evcdn.net/images/reduction/1583177_w-1920_h-1080_q-70_m-crop.jpg',
+    //     title: 'Argentina',
+    //     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
+    // },
+    // {
+    //     url: 'https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop',
+    //     title: 'Colombia',
+    //     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
+    // },
+];
 
-const myImg4 = document.createElement('img');
-myImg4.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
-myImg4.src = 'img/04.webp';
-
-const myImg5 = document.createElement('img');
-myImg5.classList.add('d-block', 'w-100', 'h-100', 'obj-cover', 'px-2', 'rounded-5');
-myImg5.src = 'img/05.webp';
-
-// Array immagini thumbnail
-const myImgThumbnail = [myImg1, myImg2, myImg3, myImg4, myImg5];
-
-// PROSSIMO STEP -- Creare contatore (linkato agli  indici dell'array) 
-// che sale e scende
-let counter = 0;
-
-// intervallo automatico avanti
-
-
-function stampPic(){
-    if (counter < myImages.length-1){
-
-        counter ++
-        console.log(counter);
-       
-    }
-    else{
-        counter = 0;
-    }
-
-    myContainer.innerHTML= myImages[counter];
-}
-
-let clock = setInterval(stampPic,3000);
+console.log(images, typeof images);
 
 
-// evento stop bottone
-stopButton.addEventListener('click', function(){
-    clearInterval(clock);
-})
+// Ciclo sull'array
+images.forEach ((element, index, array)=>{
+    console.log(element, index);
 
+    // Stampe immagini 
+    myContainer.innerHTML += `
+    <div class="w-100 my-p-relative">
+        <img id="img-1" class="w-100 h-100 obj-cover" src="${element['url']}" alt="Immagine 1">
+        <div class="my-p-absolute">
+            <h2 class="text-white my-2 fw-bold text-end fs-1">${element['title']}</h2>
+            <p class="text-white fs-5 text-end">${element['description']}</p>
+        </div>
+    </div>
+    `;
+});
 
-// Creati eventi bottoni
-rightButton.addEventListener('click', function(){
-
-    if (counter < myImages.length-1){
-
-        counter ++
-        console.log(counter);
-       
-    }
-    else{
-        counter = 0;
-    }
-
-    myContainer.innerHTML= myImages[counter];
-})
-
-lefttButton.addEventListener('click', function(){
-    
-    if ((counter !== myImages.length) && (counter !== 0)){
-
-        counter --
-        console.log(counter);
-        
-       
-    }
-    else{
-        counter = myImages.length -1;
-    }
-
-    myContainer.innerHTML= myImages[counter];
-})
-
-// Creato ciclo che stampa e modifica immagini al click
-for(let i = 0; i < myImgThumbnail.length; i++){
-    let buttonThumbnail = document.createElement('a');
-    buttonThumbnail.append(myImgThumbnail[i]);
-
-    myThumbnail.append(buttonThumbnail);
-
-    myImgThumbnail[i].addEventListener('click', function(){
-        myContainer.innerHTML = (myImages[i]);
-    })
-}
 
 
 

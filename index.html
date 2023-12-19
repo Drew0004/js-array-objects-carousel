@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carosello</title>
+
+        <!-- link bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+        <!-- link fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- link framework 12bool -->
+        <!-- <link rel="stylesheet" href="css/frameworkquery.css">
+        <link rel="stylesheet" href="css/framework.css"> -->
+        
+        <!-- link css -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body class="bg-dark">
+
+        <main>
+            <div class="container">
+                
+                <div class="row justify-content-center align-items-center h-100vh">
+                    
+                    <button type="button" id="left-button" class="btn btn-secondary circle-button d-flex justify-content-center align-items-center">
+                        <i class="bi bi-caret-left-fill"></i>
+                    </button>
+                    
+                    <!-- Contenitore immagini  -->
+                    <div class="w-rectangle h-rectangle img-container d-flex justify-content-center align-items-center">
+                        
+
+                        <!-- <img id="img-1" class="w-100 d-none h-100 obj-cover mx-3" src="img/01.webp" alt="Immagine 1">
+                        <img id="img-2" class="w-100 d-none h-100 obj-cover mx-3" src="img/02.webp" alt="Immagine 2">
+                        <img id="img-3" class="w-100 d-none h-100 obj-cover mx-3" src="img/03.webp" alt="Immagine 3">
+                        <img id="img-4" class="w-100 d-none h-100 obj-cover mx-3" src="img/04.webp" alt="Immagine 4">
+                        <img id="img-5" class="w-100 d-none h-100 obj-cover mx-3" src="img/05.webp" alt="Immagine 5"> -->
+                        
+
+                    
+                    </div>
+
+                    <button type="button" id="right-button" class="btn btn-secondary circle-button d-flex justify-content-center align-items-center">
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+
+                    <button id="stop-button" type="button" class="col-6 btn btn-primary">Ferma l'avanzamento</button>
+
+                    <div class="col-12 d-flex justify-content-center thumbnail"></div>
+                
+                </div>
+            
+            </div>
+        </main>
+        
+
+        <!-- Link bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!-- Link JavaScript -->
+        <script type="text/javascript" src="js/scripts.js"></script>
+    </body>
+</html>

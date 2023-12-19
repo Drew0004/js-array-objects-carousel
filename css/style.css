@@ -1,0 +1,66 @@
+/* 
+    reset 
+*/
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* 
+    general 
+*/
+
+.w-rectangle{
+    width: 700px;
+}
+.h-rectangle{
+    height: 500px;
+
+}
+
+.h-100{
+    height: 100%;
+}
+
+.h-100vh{
+    height: 100vh;
+}
+
+.obj-cover{
+    object-fit: cover;
+    object-position: center;
+}
+
+.circle-button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+
+.thumbnail{
+    height: 100px;
+}
+
+.thumbnail > a{
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    text-decoration: none;
+}
+
+
+/* 
+    header 
+*/
+
+/* 
+    main 
+*/
+
+/* 
+    footer 
+*/

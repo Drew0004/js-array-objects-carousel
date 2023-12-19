@@ -49,7 +49,7 @@ images.forEach ((element, index)=>{
     console.log(element, index);
 
     // Stampe immagini 
-    myContent= `<div class="w-100 my-p-relative my-card`
+    myContent= `<div class="w-100 h-100 my-p-relative my-card`
         if (index == 0){
             myContent+= ` active`
         }
